@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majd Eddine Soussi | Plombier Sanitaire & Chauffagiste</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B0F19',
+                            card: '#111827',
+                            cardHover: '#1F2937',
+                            border: '#1E293B',
+                            gold: '#D97706',
+                            goldHover: '#B45309',
+                            amberLight: '#F59E0B',
+                            cyan: '#06B6D4',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        arabic: ['Cairo', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-6px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom luxury aesthetics */
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        
+        .glass-panel:hover {
+            border-color: rgba(245, 158, 11, 0.3);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 15px rgba(217, 119, 6, 0.1);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF 20%, #F59E0B 70%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+        }
+
+        .gold-gradient-bg-hover:hover {
+            background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+        }
+
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::after {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, #D97706, transparent, #06B6D4, transparent);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .glow-effect:hover::after {
+            opacity: 0.6;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D97706;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-gold selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-amber-600 via-brand-gold to-amber-700 text-slate-900 text-xs font-bold py-2 px-4 text-center tracking-wider uppercase">
+        <div class="max-w-7xl mx-auto flex items-center justify-center gap-3">
+            <span class="inline-flex items-center gap-1">
+                <i class="fa-solid fa-certificate"></i>
+                <span data-lang-fr="Artisan Indépendant • Titulaire d'une Patente" data-lang-ar="حرفي مستقل • صاحب رخصة قانونية (Patente)">Artisan Indépendant • Titulaire d'une Patente</span>
+            </span>
+            <span class="hidden md:inline">•</span>
+            <span class="hidden md:inline-flex items-center gap-1">
+                <i class="fa-solid fa-plane-departure"></i>
+                <span data-lang-fr="Disponible pour travailler à l'étranger & immédiatement" data-lang-ar="متاح للعمل في الخارج وفوراً">Disponible pour travailler à l'étranger & immédiatement</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-brand-border/60 bg-brand-dark/85 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo / Name -->
+            <a href="#hero" class="flex items-center gap-3.5 group">
+                <div class="w-11 h-11 rounded-xl gold-gradient-bg flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-brand-gold/20 group-hover:scale-105 transition-transform duration-300">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-lg text-white tracking-wide leading-tight group-hover:text-brand-amberLight transition-colors">MAJD EDDINE SOUSSI</span>
+                    <span class="text-[11px] text-brand-amberLight font-semibold tracking-wider uppercase" data-lang-fr="Plomberie & Chauffage Central" data-lang-ar="سباكة وتدفئة مركزية">Plomberie & Chauffage Central</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-8 rtl:space-x-reverse font-medium text-sm text-slate-300">
+                <a href="#profile" class="hover:text-brand-amberLight transition-colors duration-200" data-lang-fr="Profil" data-lang-ar="النبذة المهنية">Profil</a>
+                <a href="#experience" class="hover:text-brand-amberLight transition-colors duration-200" data-lang-fr="Expériences" data-lang-ar="الخبرات">Expériences</a>
+                <a href="#skills" class="hover:text-brand-amberLight transition-colors duration-200" data-lang-fr="Compétences" data-lang-ar="المهارات">Compétences</a>
+                <a href="#formation" class="hover:text-brand-amberLight transition-colors duration-200" data-lang-fr="Formation" data-lang-ar="التكوين والشهادات">Formation</a>
+                <a href="#contact" class="hover:text-brand-amberLight transition-colors duration-200" data-lang-fr="Contact" data-lang-ar="التواصل">Contact</a>
+            </nav>
+
+            <!-- Language Switcher & Quick Call CTA -->
+            <div class="hidden sm:flex items-center space-x-4 rtl:space-x-reverse">
+                <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-brand-card hover:border-brand-gold text-xs font-bold text-brand-amberLight transition-all duration-300 flex items-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-globe text-brand-gold"></i>
+                    <span id="currentLangLabel">العربية</span>
+                </button>
+
+                <a href="tel:+21628264733" class="gold-gradient-bg hover:opacity-90 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm shadow-md hover:shadow-brand-gold/20 transition-all duration-300 flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+216 28 264 733</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="flex lg:hidden items-center gap-2">
+                <button onclick="toggleLanguage()" class="px-2.5 py-1.5 rounded-lg border border-slate-700 bg-brand-card text-xs font-bold text-brand-amberLight">
+                    <span id="mobileLangLabel">AR</span>
+                </button>
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="p-2.5 rounded-xl bg-brand-card text-slate-300 hover:text-white border border-slate-800 focus:outline-none">
+                    <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-brand-dark/95 border-b border-brand-border px-6 pt-3 pb-6 space-y-4 shadow-2xl backdrop-blur-xl">
+            <a href="#profile" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-brand-amberLight font-medium border-b border-slate-800/50" data-lang-fr="Profil Professionnel" data-lang-ar="النبذة المهنية">Profil Professionnel</a>
+            <a href="#experience" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-brand-amberLight font-medium border-b border-slate-800/50" data-lang-fr="Expériences Professionnelles" data-lang-ar="الخبرات المهنية">Expériences Professionnelles</a>
+            <a href="#skills" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-brand-amberLight font-medium border-b border-slate-800/50" data-lang-fr="Compétences Tech & Service" data-lang-ar="المهارات التقنية">Compétences Tech & Service</a>
+            <a href="#formation" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-brand-amberLight font-medium border-b border-slate-800/50" data-lang-fr="Formation et Diplômes" data-lang-ar="التكوين والشهادات">Formation et Diplômes</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-brand-amberLight font-medium" data-lang-fr="Contact Direct" data-lang-ar="التواصل المباشر">Contact Direct</a>
+            
+            <div class="pt-2 grid grid-cols-2 gap-3">
+                <a href="tel:+21628264733" class="w-full text-center gold-gradient-bg text-slate-950 font-bold py-3 rounded-xl block text-sm shadow-md">
+                    <i class="fa-solid fa-phone me-1"></i> Appeler
+                </a>
+                <a href="https://wa.me/21628264733" target="_blank" class="w-full text-center bg-emerald-600 text-white font-bold py-3 rounded-xl block text-sm shadow-md">
+                    <i class="fa-brands fa-whatsapp me-1"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative py-16 lg:py-24 overflow-hidden border-b border-brand-border/60">
+            <!-- Background Glows -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-brand-gold/10 blur-[130px] rounded-full pointer-events-none"></div>
+            <div class="absolute bottom-10 right-10 w-[300px] h-[300px] bg-brand-cyan/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-8 text-center lg:text-left rtl:lg:text-right">
+                        
+                        <!-- Badges Header -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-500/10 text-brand-amberLight border border-amber-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-shield-check text-xs"></i>
+                                <span data-lang-fr="Artisan Indépendant" data-lang-ar="حرفي مستقل">Artisan Indépendant</span>
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-file-signature text-xs"></i>
+                                <span data-lang-fr="Titulaire d'une Patente" data-lang-ar="صاحب رخصة معتمدة (Patente)">Titulaire d'une Patente</span>
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-award text-xs"></i>
+                                <span data-lang-fr="+8 Ans d'Expérience" data-lang-ar="+8 سنوات من الخبرة">+8 Ans d'Expérience</span>
+                            </span>
+                        </div>
+
+                        <!-- Main Name & Title -->
+                        <div class="space-y-3">
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                                MAJD EDDINE <br/>
+                                <span class="gold-gradient-text">SOUSSI</span>
+                            </h1>
+                            <p class="text-base sm:text-lg lg:text-xl font-bold text-slate-300 tracking-wide uppercase" data-lang-fr="Plombier Sanitaire – Chauffagiste | Installateur en Chauffage Central" data-lang-ar="سباك صحي – فني تدفئة | مُركب تدفئة مركزية">
+                                Plombier Sanitaire – Chauffagiste | Installateur en Chauffage Central
+                            </p>
+                        </div>
+
+                        <!-- Brief Intro text -->
+                        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0" data-lang-fr="Spécialisé dans les installations sanitaires, le chauffage central, la rénovation et la maintenance. Intervention sur tous types de chantiers (résidentiels, commerciaux et industriels) avec rigueur et respect des normes." data-lang-ar="متخصص في التركيبات الصحية، التدفئة المركزية، التجديد والصيانة. تدخل في جميع أنواع الورشات (سكنية، تجارية، وصناعية) باحترافية، دقة، واحترام كامل لمعايير السلامة والجودة.">
+                            Spécialisé dans les installations sanitaires, le chauffage central, la rénovation et la maintenance. Intervention sur tous types de chantiers (résidentiels, commerciaux et industriels) avec rigueur et respect des normes.
+                        </p>
+
+                        <!-- Key Information Bar -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                            <div class="bg-brand-card/80 p-3.5 rounded-xl border border-brand-border text-left rtl:text-right">
+                                <div class="text-[11px] text-slate-400 uppercase font-semibold tracking-wider" data-lang-fr="Localisation" data-lang-ar="الموقع">Localisation</div>
+                                <div class="text-sm font-bold text-white flex items-center gap-1.5 mt-1">
+                                    <i class="fa-solid fa-location-dot text-brand-amberLight text-xs"></i>
+                                    <span>Béni Khiar, Nabeul</span>
+                                </div>
+                            </div>
+                            <div class="bg-brand-card/80 p-3.5 rounded-xl border border-brand-border text-left rtl:text-right">
+                                <div class="text-[11px] text-slate-400 uppercase font-semibold tracking-wider" data-lang-fr="Mobilité" data-lang-ar="التنقل">Mobilité</div>
+                                <div class="text-sm font-bold text-white flex items-center gap-1.5 mt-1">
+                                    <i class="fa-solid fa-car text-brand-amberLight text-xs"></i>
+                                    <span data-lang-fr="Permis B – Véhiculé" data-lang-ar="رخصة B - وسيلة نقل">Permis B – Véhiculé</span>
+                                </div>
+                            </div>
+                            <div class="col-span-2 sm:col-span-1 bg-brand-card/80 p-3.5 rounded-xl border border-brand-border text-left rtl:text-right">
+                                <div class="text-[11px] text-slate-400 uppercase font-semibold tracking-wider" data-lang-fr="Disponibilité" data-lang-ar="التفرغ">Disponibilité</div>
+                                <div class="text-sm font-bold text-emerald-400 flex items-center gap-1.5 mt-1">
+                                    <i class="fa-solid fa-plane text-xs"></i>
+                                    <span data-lang-fr="À l'Étranger / Immédiat" data-lang-ar="للخارج / فوراً">À l'Étranger / Immédiat</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Actions -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#contact" class="gold-gradient-bg hover:opacity-95 text-slate-950 font-bold px-7 py-4 rounded-xl shadow-xl shadow-brand-gold/20 hover:scale-105 transition-all duration-300 flex items-center gap-3">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span data-lang-fr="Demander un Devis / Contact" data-lang-ar="تواصل معي / طلب استشارة">Demander un Devis / Contact</span>
+                            </a>
+                            <a href="https://wa.me/21628264733" target="_blank" class="bg-brand-card hover:bg-slate-800 text-white font-semibold px-6 py-4 rounded-xl border border-slate-700 hover:border-slate-500 transition-all duration-300 flex items-center gap-3">
+                                <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                                <span data-lang-fr="Message WhatsApp" data-lang-ar="واتساب مباشر">Message WhatsApp</span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Hero Visual Feature Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md animate-float">
+                            
+                            <!-- Master Card -->
+                            <div class="glass-panel rounded-2xl p-7 space-y-6 border border-brand-border relative overflow-hidden shadow-2xl">
+                                
+                                <div class="flex items-center justify-between border-b border-slate-800 pb-5">
+                                    <div class="flex items-center gap-3.5">
+                                        <div class="w-14 h-14 rounded-2xl gold-gradient-bg flex items-center justify-center text-slate-950 text-2xl font-black shadow-lg">
+                                            <i class="fa-solid fa-user-gear"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-extrabold text-white text-lg">Majd Eddine Soussi</h3>
+                                            <p class="text-xs text-brand-amberLight font-semibold" data-lang-fr="Spécialiste Plomberie & Chauffage" data-lang-ar="أخصائي السباكة والتدفئة">Spécialiste Plomberie & Chauffage</p>
+                                        </div>
+                                    </div>
+                                    <span class="flex h-3 w-3 relative">
+                                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                      <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                    </span>
+                                </div>
+
+                                <!-- Key Strengths Checklist -->
+                                <div class="space-y-3.5 text-sm">
+                                    <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark/50 border border-slate-800/80">
+                                        <i class="fa-solid fa-screwdriver-wrench text-brand-amberLight mt-1 text-base"></i>
+                                        <div>
+                                            <h4 class="font-bold text-white text-xs" data-lang-fr="Équipement Professionnel" data-lang-ar="تجهيز مهني كامل">Équipement Professionnel</h4>
+                                            <p class="text-xs text-slate-400" data-lang-fr="Possède tout le matériel professionnel nécessaire" data-lang-ar="يمتلك كافة المعدات والأدوات المهنية اللازمة">Possède tout le matériel professionnel nécessaire</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark/50 border border-slate-800/80">
+                                        <i class="fa-solid fa-clock text-brand-amberLight mt-1 text-base"></i>
+                                        <div>
+                                            <h4 class="font-bold text-white text-xs" data-lang-fr="Engagement & Rigueur" data-lang-ar="التزام وجدية">Engagement & Rigueur</h4>
+                                            <p class="text-xs text-slate-400" data-lang-fr="Sérieux, ponctuel et autonome" data-lang-ar="جاد، دقيق في المواعيد ومستقل بالعمل">Sérieux, ponctuel et autonome</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark/50 border border-slate-800/80">
+                                        <i class="fa-solid fa-square-check text-brand-amberLight mt-1 text-base"></i>
+                                        <div>
+                                            <h4 class="font-bold text-white text-xs" data-lang-fr="Normes & Sécurité" data-lang-ar="المعايير والسلامة">Normes & Sécurité</h4>
+                                            <p class="text-xs text-slate-400" data-lang-fr="Sens de l'organisation et respect des normes" data-lang-ar="تنظيم عالي واحترام تام لمعايير السلامة">Sens de l'organisation et respect des normes</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Quality Guarantee Ribbon -->
+                                <div class="bg-gradient-to-r from-brand-card via-slate-900 to-brand-card p-4 rounded-xl border border-brand-gold/30 text-center space-y-1">
+                                    <p class="text-[11px] font-black text-brand-amberLight tracking-widest uppercase" data-lang-fr="QUALITÉ • FIABILITÉ • PROFESSIONNALISME" data-lang-ar="جودة • موثوقية • احترافية">QUALITÉ • FIABILITÉ • PROFESSIONNALISME</p>
+                                    <p class="text-xs text-slate-300 italic" data-lang-fr="« Votre satisfaction est ma priorité »" data-lang-ar="« رضاكم هو أولويتنا »">« Votre satisfaction est ma priority »</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFILE SECTION -->
+        <section id="profile" class="py-20 border-b border-brand-border/60 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-black text-brand-amberLight uppercase tracking-widest bg-brand-gold/10 px-3.5 py-1.5 rounded-full border border-brand-gold/20" data-lang-fr="À PROPOS DE MOI" data-lang-ar="نبذة عن الفني">À PROPOS DE MOI</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4" data-lang-fr="Profil Professionnel" data-lang-ar="النبذة المهنية الشاملة">Profil Professionnel</h2>
+                    <div class="w-16 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
+                    
+                    <!-- Bio Content Box -->
+                    <div class="md:col-span-8 glass-panel rounded-2xl p-7 sm:p-10 space-y-5 border border-brand-border">
+                        <div class="flex items-center gap-3 text-brand-amberLight font-bold">
+                            <i class="fa-solid fa-quote-left text-2xl"></i>
+                            <span class="text-xs uppercase tracking-wider" data-lang-fr="Expertise CertifiéeDepuis 2011" data-lang-ar="خبرة مؤهلة منذ 2011">Expertise Certifiée Depuis 2011</span>
+                        </div>
+                        <p class="text-slate-300 leading-relaxed text-base sm:text-lg" data-lang-fr="Plombier sanitaire et chauffagiste qualifié, titulaire d'un CAP en Plomberie Sanitaire et Chauffage obtenu en Tunisie en 2011. Artisan indépendant depuis 2016, titulaire d'une patente, spécialisé dans les installations sanitaires, le chauffage central, la rénovation et la maintenance."
+                           data-lang-ar="سباك صحي وفني تدفئة مؤهل، حاصل على شهادة الكفاءة المهنية (CAP) في السباكة الصحية والتدفئة في تونس عام 2011. حرفي مستقل منذ عام 2016، يحمل رخصة (Patente)، ومختص في التركيبات الصحية، التدفئة المركزية، التجديد والصيانة.">
+                            Plombier sanitaire et chauffagiste qualifié, titulaire d'un CAP en Plomberie Sanitaire et Chauffage obtenu en Tunisie en 2011. Artisan indépendant depuis 2016, titulaire d'une patente, spécialisé dans les installations sanitaires, le chauffage central, la rénovation et la maintenance.
+                        </p>
+                        <p class="text-slate-300 leading-relaxed text-base sm:text-lg" data-lang-fr="J'interviens sur tous types de chantiers (résidentiels, commerciaux et industriels) avec professionnalisme, rigueur et respect des normes de sécurité et de qualité."
+                           data-lang-ar="يتدخل في جميع أنواع الورشات (السكنية، التجارية، والصناعية) باحترافية، دقة، واحترام كامل لمعايير السلامة والجودة.">
+                            J'interviens sur tous types de chantiers (résidentiels, commerciaux et industriels) avec professionnalisme, rigueur et respect des normes de sécurité et de qualité.
+                        </p>
+                    </div>
+
+                    <!-- Languages Side Box -->
+                    <div class="md:col-span-4 space-y-4">
+                        <div class="glass-panel p-6 rounded-2xl border border-brand-border space-y-4">
+                            <h3 class="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-800 pb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-language text-brand-amberLight"></i>
+                                <span data-lang-fr="Maitrise des Langues" data-lang-ar="إتقان اللغات">Maitrise des Langues</span>
+                            </h3>
+                            
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-xs font-bold text-slate-200 mb-1">
+                                        <span data-lang-fr="Arabe" data-lang-ar="العربية">Arabe</span>
+                                        <span class="text-brand-amberLight" data-lang-fr="Langue Maternelle" data-lang-ar="اللغة الأم">Langue Maternelle</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="gold-gradient-bg h-full w-full"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-xs font-bold text-slate-200 mb-1">
+                                        <span data-lang-fr="Français" data-lang-ar="الفرنسية">Français</span>
+                                        <span class="text-cyan-400" data-lang-fr="Bon niveau" data-lang-ar="مستوى جيد">Bon niveau</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-cyan-500 h-full w-4/5"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Status Badge Box -->
+                        <div class="bg-brand-card/90 p-5 rounded-2xl border border-slate-800 text-center space-y-2">
+                            <i class="fa-solid fa-briefcase text-brand-amberLight text-xl"></i>
+                            <h4 class="font-bold text-white text-xs" data-lang-fr="Statut Professionnel" data-lang-ar="الوضع المهني">Statut Professionnel</h4>
+                            <p class="text-xs text-slate-400" data-lang-fr="Activité déclarée avec Patente officielle" data-lang-ar="نشاط قانوني معلن برخصة رسمية">Activité déclarée avec Patente officielle</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="py-20 border-b border-brand-border/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-black text-brand-amberLight uppercase tracking-widest bg-brand-gold/10 px-3.5 py-1.5 rounded-full border border-brand-gold/20" data-lang-fr="PARCOURS SUR LE TERRAIN" data-lang-ar="المسار والخبرة الميدانية">PARCOURS SUR LE TERRAIN</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4" data-lang-fr="Expériences Professionnelles" data-lang-ar="الخبرات المهنية والميدانية">Expériences Professionnelles</h2>
+                    <div class="w-16 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="max-w-5xl mx-auto">
+                    <!-- Experience Main Card -->
+                    <div class="glass-panel rounded-2xl p-6 sm:p-10 border border-brand-border space-y-8">
+                        
+                        <div class="flex flex-wrap items-start justify-between gap-4 border-b border-slate-800 pb-6">
+                            <div class="space-y-1">
+                                <span class="inline-block px-3.5 py-1 rounded-md gold-gradient-bg text-slate-950 text-xs font-extrabold shadow-sm">
+                                    2016 – <span data-lang-fr="Aujourd'hui" data-lang-ar="الآن">Aujourd'hui</span>
+                                </span>
+                                <h3 class="text-2xl font-extrabold text-white pt-2" data-lang-fr="ARTISAN PLOMBIER INDÉPENDANT" data-lang-ar="سباك حرفي مستقل">ARTISAN PLOMBIER INDÉPENDANT</h3>
+                                <p class="text-sm font-semibold text-brand-amberLight" data-lang-fr="Titulaire d'une patente — Béni Khiar, Nabeul, Tunisie" data-lang-ar="صاحب رخصة معتمدة (Patente) — بني خيار، نابل، تونس">Titulaire d'une patente — Béni Khiar, Nabeul, Tunisie</p>
+                            </div>
+                            <div class="bg-slate-900 px-4 py-2 rounded-xl border border-slate-800 text-xs text-slate-300 font-semibold flex items-center gap-2">
+                                <i class="fa-solid fa-house-chimney-crack text-brand-amberLight"></i>
+                                <span data-lang-fr="Chantiers Résidentiels & Industriels" data-lang-ar="ورشات سكنية وصناعية">Chantiers Résidentiels & Industriels</span>
+                            </div>
+                        </div>
+
+                        <!-- Main Responsibilities Checklist -->
+                        <div class="space-y-4">
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider" data-lang-fr="Missions et interventions quotidiennes :" data-lang-ar="المهام والأعمال المنفذة الميدانية:">Missions et interventions quotidiennes :</h4>
+                            
+                            <div class="grid sm:grid-cols-2 gap-4 text-sm text-slate-300">
+                                
+                                <div class="flex items-start gap-3 bg-brand-dark/40 p-3.5 rounded-xl border border-slate-800/80">
+                                    <i class="fa-solid fa-circle-check text-brand-amberLight mt-1 text-sm"></i>
+                                    <span data-lang-fr="Réalisation des installations sanitaires complètes (maisons, appartements, commerces, locaux industriels)." data-lang-ar="تنفيذ التركيبات الصحية الكاملة (منازل، شقق، محلات تجارية، منشآت صناعية).">Réalisation des installations sanitaires complètes (maisons, appartements, commerces, locaux industriels).</span>
+                                </div>
+
+                                <div class="flex items-start gap-3 bg-brand-dark/40 p-3.5 rounded-xl border border-slate-800/80">
+                                    <i class="fa-solid fa-circle-check text-brand-amberLight mt-1 text-sm"></i>
+                                    <span data-lang-fr="Installation des réseaux d'eau froide et chaude et d'évacuation." data-lang-ar="تركيب شبكات المياه الباردة والساخنة وشبكات الصرف الصحي.">Installation des réseaux d'eau froide et chaude et d'évacuation.</span>
+                                </div>
+
+                                <div class="flex items-start gap-3 bg-brand-dark/40 p-3.5 rounded-xl border border-slate-800/80">
+                                    <i class="fa-solid fa-circle-check text-brand-amberLight mt-1 text-sm"></i>
+                                    <span data-lang-fr="Chauffage central : installation et entretien des systèmes de chauffage." data-lang-ar="التدفئة المركزية: تركيب وصيانة جميع أنظمة التدفئة.">Chauffage central : installation et entretien des systèmes de chauffage.</span>
+                                </div>
+
+                                <div class="flex items-start gap-3 bg-brand-dark/40 p-3.5 rounded-xl border border-slate-800/80">
+                                    <i class="fa-solid fa-circle-check text-brand-amberLight mt-1 text-sm"></i>
+                                    <span data-lang-fr="Installation et entretien des chauffe-eaux et chaudières." data-lang-ar="تركيب وصيانة سخانات المياه والغلايات.">Installation et entretien des chauffe-eaux et chaudières.</span>
+                                </div>
+
+                                <div class="flex items-start gap-3 bg-brand-dark/40 p-3.5 rounded-xl border border-slate-800/80">
+                                    <i class="fa-solid fa-circle-check text-brand-amberLight mt-1 text-sm"></i>
+                                    <span data-lang-fr="Rénovation complète de salles de bains et cuisines." data-lang-ar="تجديد وترميم الحمامات والمطابخ بالكامل.">Rénovation complète de salles de bains et cuisines.</span>
+                                </div>
+
+                                <div class="flex items-start gap-3 bg-brand-dark/40 p-3.5 rounded-xl border border-slate-800/80">
+                                    <i class="fa-solid fa-circle-check text-brand-amberLight mt-1 text-sm"></i>
+                                    <span data-lang-fr="Détection et réparation précise des fuites d'eau." data-lang-ar="كشف وإصلاح كافة تسربات المياه بدقة.">Détection et réparation précise des fuites d'eau.</span>
+                                </div>
+
+                                <div class="flex items-start gap-3 bg-brand-dark/40 p-3.5 rounded-xl border border-slate-800/80">
+                                    <i class="fa-solid fa-circle-check text-brand-amberLight mt-1 text-sm"></i>
+                                    <span data-lang-fr="Travaux d'étanchéité et pose de Derbigum." data-lang-ar="أعمال العزل المائي وتركيب الديربيجوم (Derbigum).">Travaux d'étanchéité et pose de Derbigum.</span>
+                                </div>
+
+                                <div class="flex items-start gap-3 bg-brand-dark/40 p-3.5 rounded-xl border border-slate-800/80">
+                                    <i class="fa-solid fa-circle-check text-brand-amberLight mt-1 text-sm"></i>
+                                    <span data-lang-fr="Maintenance préventive et corrective des installations." data-lang-ar="الصيانة الوقائية والتصحيحية لكافة التجهيزات.">Maintenance préventive et corrective des installations.</span>
+                                </div>
+
+                                <div class="flex items-start gap-3 bg-brand-dark/40 p-3.5 rounded-xl border border-slate-800/80">
+                                    <i class="fa-solid fa-circle-check text-brand-amberLight mt-1 text-sm"></i>
+                                    <span data-lang-fr="Lecture des plans techniques et respect rigoureux des délais." data-lang-ar="قراءة المخططات التقنية واحترام المواعيد المحددة.">Lecture des plans techniques et respect rigoureux des délais.</span>
+                                </div>
+
+                                <div class="flex items-start gap-3 bg-brand-dark/40 p-3.5 rounded-xl border border-slate-800/80">
+                                    <i class="fa-solid fa-circle-check text-brand-amberLight mt-1 text-sm"></i>
+                                    <span data-lang-fr="Conseil technique et suivi personnalisé de la satisfaction clients." data-lang-ar="تقديم الاستشارات التقنية ومتابعة رضا العملاء.">Conseil technique et suivi personnalisé de la satisfaction clients.</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-20 border-b border-brand-border/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-black text-brand-amberLight uppercase tracking-widest bg-brand-gold/10 px-3.5 py-1.5 rounded-full border border-brand-gold/20" data-lang-fr="MAÎTRISE TECHNIQUE" data-lang-ar="الإتقان والمهارات">MAÎTRISE TECHNIQUE</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4" data-lang-fr="Compétences Clés" data-lang-ar="المهارات التقنية والخدمية">Compétences Clés</h2>
+                    <div class="w-16 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- Skills Interactive Grid -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Plomberie Card -->
+                    <div class="glass-panel rounded-2xl p-7 space-y-6 border border-brand-border hover:-translate-y-1 transition-transform duration-300">
+                        <div class="flex items-center gap-4 border-b border-slate-800 pb-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-brand-amberLight flex items-center justify-center text-2xl font-black">
+                                <i class="fa-solid fa-faucet-drip"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-white text-lg" data-lang-fr="Plomberie & Sanitaires" data-lang-ar="السباكة والأدوات الصحية">Plomberie & Sanitaires</h3>
+                                <p class="text-xs text-slate-400" data-lang-fr="Réseaux & Équipements" data-lang-ar="الشبكات والتجهيزات">Réseaux & Équipements</p>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/50 border border-slate-800">
+                                <span data-lang-fr="Plomberie sanitaire" data-lang-ar="سباكة صحية متكاملة">Plomberie sanitaire</span>
+                                <i class="fa-solid fa-check text-brand-amberLight text-xs"></i>
+                            </li>
+                            <li class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/50 border border-slate-800">
+                                <span data-lang-fr="Réseaux eau chaude/froide & évacuation" data-lang-ar="شبكات المياه والصرف الصحي">Réseaux eau chaude/froide & évacuation</span>
+                                <i class="fa-solid fa-check text-brand-amberLight text-xs"></i>
+                            </li>
+                            <li class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/50 border border-slate-800">
+                                <span data-lang-fr="Installation des équipements sanitaires" data-lang-ar="تركيب كافة التجهيزات الصحية">Installation des équipements sanitaires</span>
+                                <i class="fa-solid fa-check text-brand-amberLight text-xs"></i>
+                            </li>
+                            <li class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/50 border border-slate-800">
+                                <span data-lang-fr="Rénovation salles de bains & cuisines" data-lang-ar="تجديد المطابخ والحمامات">Rénovation salles de bains & cuisines</span>
+                                <i class="fa-solid fa-check text-brand-amberLight text-xs"></i>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Chauffage Card -->
+                    <div class="glass-panel rounded-2xl p-7 space-y-6 border border-brand-border hover:-translate-y-1 transition-transform duration-300">
+                        <div class="flex items-center gap-4 border-b border-slate-800 pb-4">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl font-black">
+                                <i class="fa-solid fa-fire-flame-curved"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-white text-lg" data-lang-fr="Chauffage Central" data-lang-ar="التدفئة المركزية">Chauffage Central</h3>
+                                <p class="text-xs text-slate-400" data-lang-fr="Installation & Entretien" data-lang-ar="التركيب والصيانة">Installation & Entretien</p>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/50 border border-slate-800">
+                                <span data-lang-fr="Chauffage central complet" data-lang-ar="أنظمة التدفئة المركزية">Chauffage central complet</span>
+                                <i class="fa-solid fa-check text-cyan-400 text-xs"></i>
+                            </li>
+                            <li class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/50 border border-slate-800">
+                                <span data-lang-fr="Installation & entretien chauffe-eaux" data-lang-ar="تركيب وصيانة سخانات المياه">Installation & entretien chauffe-eaux</span>
+                                <i class="fa-solid fa-check text-cyan-400 text-xs"></i>
+                            </li>
+                            <li class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/50 border border-slate-800">
+                                <span data-lang-fr="Installation & entretien chaudières" data-lang-ar="تركيب وصيانة الغلايات والمدافئ">Installation & entretien chaudières</span>
+                                <i class="fa-solid fa-check text-cyan-400 text-xs"></i>
+                            </li>
+                            <li class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/50 border border-slate-800">
+                                <span data-lang-fr="Soudure et raccordements techniques" data-lang-ar="أعمال اللحام والوصلات">Soudure et raccordements techniques</span>
+                                <i class="fa-solid fa-check text-cyan-400 text-xs"></i>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Maintenance Card -->
+                    <div class="glass-panel rounded-2xl p-7 space-y-6 border border-brand-border hover:-translate-y-1 transition-transform duration-300">
+                        <div class="flex items-center gap-4 border-b border-slate-800 pb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl font-black">
+                                <i class="fa-solid fa-toolbox"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-white text-lg" data-lang-fr="Maintenance & Étanchéité" data-lang-ar="الصيانة والعزل المائي">Maintenance & Étanchéité</h3>
+                                <p class="text-xs text-slate-400" data-lang-fr="Diagnostic & Réparation" data-lang-ar="التشخيص والتصحيح">Diagnostic & Réparation</p>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/50 border border-slate-800">
+                                <span data-lang-fr="Détection & réparation des fuites" data-lang-ar="كشف وإصلاح التسربات">Détection & réparation des fuites</span>
+                                <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                            </li>
+                            <li class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/50 border border-slate-800">
+                                <span data-lang-fr="Étanchéité & pose de Derbigum" data-lang-ar="العزل المائي وتركيب Derbigum">Étanchéité & pose de Derbigum</span>
+                                <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                            </li>
+                            <li class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/50 border border-slate-800">
+                                <span data-lang-fr="Maintenance préventive & corrective" data-lang-ar="صيانة وقائية وتصحيحية">Maintenance préventive & corrective</span>
+                                <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                            </li>
+                            <li class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/50 border border-slate-800">
+                                <span data-lang-fr="Lecture des plans techniques" data-lang-ar="قراءة المخططات التقنية">Lecture des plans techniques</span>
+                                <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Professional Qualities Banner -->
+                <div class="mt-12 bg-gradient-to-r from-brand-card via-slate-900 to-brand-card rounded-2xl p-6 border border-slate-800 flex flex-wrap items-center justify-around gap-6 text-center">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-amber-500/10 text-brand-amberLight flex items-center justify-center">
+                            <i class="fa-solid fa-users text-sm"></i>
+                        </div>
+                        <span class="font-bold text-sm text-slate-200" data-lang-fr="Travail en équipe" data-lang-ar="قدرة على العمل الجماعي">Travail en équipe</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                            <i class="fa-solid fa-shield-halved text-sm"></i>
+                        </div>
+                        <span class="font-bold text-sm text-slate-200" data-lang-fr="Respect strict des normes" data-lang-ar="التزام كامل بمعايير السلامة">Respect strict des normes</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                            <i class="fa-solid fa-user-check text-sm"></i>
+                        </div>
+                        <span class="font-bold text-sm text-slate-200" data-lang-fr="Autonomie & Ponctualité" data-lang-ar="دقة واستقلالية بالعمل">Autonomie & Ponctualité</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION & QUALIFICATIONS SECTION -->
+        <section id="formation" class="py-20 border-b border-brand-border/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-black text-brand-amberLight uppercase tracking-widest bg-brand-gold/10 px-3.5 py-1.5 rounded-full border border-brand-gold/20" data-lang-fr="DIPLÔMES ET CERTIFICATS" data-lang-ar="المؤهلات العلمية">DIPLÔMES ET CERTIFICATS</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4" data-lang-fr="Formation & Qualification" data-lang-ar="الشهادات والتكوين الأكاديمي">Formation & Qualification</h2>
+                    <div class="w-16 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    
+                    <!-- CAP Degree Box -->
+                    <div class="glass-panel rounded-2xl p-8 space-y-5 border border-brand-gold/30 relative overflow-hidden">
+                        <div class="flex items-start gap-5">
+                            <div class="w-16 h-16 rounded-2xl gold-gradient-bg text-slate-950 flex items-center justify-center text-3xl font-black flex-shrink-0 shadow-lg">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="px-3 py-1 rounded bg-amber-500/20 text-brand-amberLight text-xs font-extrabold inline-block">2011</span>
+                                <h3 class="text-xl font-extrabold text-white leading-snug" data-lang-fr="CAP PLOMBERIE SANITAIRE ET CHAUFFAGE" data-lang-ar="شهادة الكفاءة المهنية CAP في السباكة الصحية والتدفئة">CAP PLOMBERIE SANITAIRE ET CHAUFFAGE</h3>
+                                <p class="text-sm font-semibold text-slate-300" data-lang-fr="Centre sectoriel de formation dans le bâtiment de Soliman – Tunisie" data-lang-ar="مركز التكوين المهني القطاعي في البناء بسليمان – تونس">Centre sectoriel de formation dans le bâtiment de Soliman – Tunisie</p>
+                                <p class="text-xs text-slate-400 pt-2" data-lang-fr="Diplôme d'État qualifiant aux normes techniques officielles pour la plomberie et le chauffage." data-lang-ar="شهادة دولية ورسمية مؤهلة للعمل وفق المعايير التقنية المعتمَدة في السباكة والتدفئة.">Diplôme d'État qualifiant aux normes techniques officielles pour la plomberie et le chauffage.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CEFE Certificate Box -->
+                    <div class="glass-panel rounded-2xl p-8 space-y-5 border border-cyan-500/30 relative overflow-hidden">
+                        <div class="flex items-start gap-5">
+                            <div class="w-16 h-16 rounded-2xl bg-cyan-500 text-slate-950 flex items-center justify-center text-3xl font-black flex-shrink-0 shadow-lg">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="px-3 py-1 rounded bg-cyan-500/20 text-cyan-400 text-xs font-extrabold inline-block" data-lang-fr="Titre Professionnel C.E.F.E" data-lang-ar="تكوين متخصص C.E.F.E">Titre Professionnel C.E.F.E</span>
+                                <h3 class="text-xl font-extrabold text-white" data-lang-fr="Formation C.E.F.E" data-lang-ar="تكوين C.E.F.E في إدارة وتطوير المشاريع">Formation C.E.F.E</h3>
+                                <p class="text-sm font-bold text-cyan-400" data-lang-fr="Gestion, Entrepreneuriat & Autonomie" data-lang-ar="إدارة الأعمال والتسيير المستقل">Gestion, Entrepreneuriat & Autonomie</p>
+                                
+                                <ul class="text-xs text-slate-300 space-y-2 pt-2">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-check text-cyan-400 text-xs"></i>
+                                        <span data-lang-fr="Entrepreneuriat" data-lang-ar="ريادة الأعمال (Entrepreneuriat)">Entrepreneuriat</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-check text-cyan-400 text-xs"></i>
+                                        <span data-lang-fr="Gestion de projets" data-lang-ar="إدارة وتخطيط المشاريع (Gestion de projets)">Gestion de projets</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-check text-cyan-400 text-xs"></i>
+                                        <span data-lang-fr="Gestion du travail indépendant" data-lang-ar="إدارة العمل المستقل والحرفي (Gestion du travail indépendant)">Gestion du travail indépendant</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & CALL TO ACTION SECTION -->
+        <section id="contact" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-black text-brand-amberLight uppercase tracking-widest bg-brand-gold/10 px-3.5 py-1.5 rounded-full border border-brand-gold/20" data-lang-fr="DISPONIBLE & JOIGNABLE" data-lang-ar="تواصل مباشر">DISPONIBLE & JOIGNABLE</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4" data-lang-fr="Coordonnées & Contact" data-lang-ar="معلومات التواصل المباشر">Coordonnées & Contact</h2>
+                    <div class="w-16 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Direct Contact List -->
+                    <div class="space-y-4">
+                        
+                        <!-- Phone Card -->
+                        <a href="tel:+21628264733" class="glass-panel p-5 rounded-2xl flex items-center gap-4 hover:border-brand-gold transition-all duration-300 group">
+                            <div class="w-14 h-14 rounded-2xl gold-gradient-bg text-slate-950 flex items-center justify-center text-2xl font-black group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-semibold" data-lang-fr="Téléphone Direct" data-lang-ar="الهاتف المباشر">Téléphone Direct</div>
+                                <div class="text-xl font-black text-white group-hover:text-brand-amberLight transition-colors">+216 28 264 733</div>
+                            </div>
+                        </a>
+
+                        <!-- Email Card -->
+                        <a href="mailto:soussimajd45@gmail.com" class="glass-panel p-5 rounded-2xl flex items-center gap-4 hover:border-cyan-400 transition-all duration-300 group">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-500 text-slate-950 flex items-center justify-center text-2xl font-black group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-semibold" data-lang-fr="Adresse E-mail" data-lang-ar="البريد الإلكتروني">Adresse E-mail</div>
+                                <div class="text-base font-bold text-white group-hover:text-cyan-400 transition-colors">soussimajd45@gmail.com</div>
+                            </div>
+                        </a>
+
+                        <!-- Location Card -->
+                        <div class="glass-panel p-5 rounded-2xl flex items-center gap-4 border border-slate-800">
+                            <div class="w-14 h-14 rounded-2xl bg-slate-800 text-brand-amberLight flex items-center justify-center text-2xl font-black">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-semibold" data-lang-fr="Adresse & Région" data-lang-ar="الموقع">Adresse & Région</div>
+                                <div class="text-base font-bold text-white">Béni Khiar, Nabeul, Tunisie</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Work Status Box -->
+                    <div class="glass-panel rounded-2xl p-7 border border-brand-gold/30 flex flex-col justify-between space-y-6">
+                        <div>
+                            <h3 class="text-xl font-black text-white mb-4 border-b border-slate-800 pb-3" data-lang-fr="Disponibilité & Mobilité" data-lang-ar="التفرغ وجاهزية التنقل">Disponibilité & Mobilité</h3>
+                            
+                            <ul class="space-y-4 text-sm text-slate-300">
+                                <li class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                        <i class="fa-solid fa-plane-departure text-sm"></i>
+                                    </div>
+                                    <span class="font-medium" data-lang-fr="Disponible pour travailler à l'étranger" data-lang-ar="متاح ومستعد للعمل في الخارج">Disponible pour travailler à l'étranger</span>
+                                </li>
+
+                                <li class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-brand-amberLight flex items-center justify-center flex-shrink-0">
+                                        <i class="fa-solid fa-bolt text-sm"></i>
+                                    </div>
+                                    <span class="font-medium" data-lang-fr="Disponible immédiatement" data-lang-ar="متفرغ ومتاح للعمل فوراً">Disponible immédiatement</span>
+                                </li>
+
+                                <li class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center flex-shrink-0">
+                                        <i class="fa-solid fa-car text-sm"></i>
+                                    </div>
+                                    <span class="font-medium" data-lang-fr="Permis B — Véhiculé pour tous déplacements" data-lang-ar="رخصة سياقة صنف B ووسيلة نقل خاصة">Permis B — Véhiculé pour tous déplacements</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- WhatsApp Action CTA -->
+                        <a href="https://wa.me/21628264733" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-4 px-6 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-3 text-base">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span data-lang-fr="Discuter sur WhatsApp" data-lang-ar="مراسلة فورية عبر واتساب">Discuter sur WhatsApp</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark border-t border-brand-border py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="font-bold text-slate-300 text-sm">MAJD EDDINE SOUSSI</p>
+            <p data-lang-fr="Plombier Sanitaire – Chauffagiste | Installateur en Chauffage Central" data-lang-ar="سباك صحي – فني تدفئة | مُركب تدفئة مركزية">Plombier Sanitaire – Chauffagiste | Installateur en Chauffage Central</p>
+            <p class="pt-2 text-[11px] text-slate-500">© 2026 Tous droits réservés • Béni Khiar, Nabeul, Tunisie.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVITY & BILINGUAL LOGIC -->
+    <script>
+        let currentLang = 'fr';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'fr' ? 'ar' : 'fr';
+            const htmlTag = document.documentElement;
+            
+            if (currentLang === 'ar') {
+                htmlTag.setAttribute('dir', 'rtl');
+                htmlTag.setAttribute('lang', 'ar');
+                document.body.classList.add('font-arabic');
+                document.body.classList.remove('font-sans');
+                document.getElementById('currentLangLabel').innerText = 'Français';
+                document.getElementById('mobileLangLabel').innerText = 'FR';
+            } else {
+                htmlTag.setAttribute('dir', 'ltr');
+                htmlTag.setAttribute('lang', 'fr');
+                document.body.classList.add('font-sans');
+                document.body.classList.remove('font-arabic');
+                document.getElementById('currentLangLabel').innerText = 'العربية';
+                document.getElementById('mobileLangLabel').innerText = 'AR';
+            }
+
+            // Update text content seamlessly
+            const langElements = document.querySelectorAll('[data-lang-fr]');
+            langElements.forEach(el => {
+                const text = el.getAttribute(`data-lang-${currentLang}`);
+                if (text) {
+                    el.textContent = text;
+                }
+            });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+    </script>
+</body>
+</html>
